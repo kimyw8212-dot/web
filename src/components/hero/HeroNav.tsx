@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { NAV_ITEMS } from "@/lib/content";
 import { scrollToSection } from "@/lib/scroll";
@@ -12,11 +13,14 @@ type HeroNavProps = {
 
 export function HeroNav({ style }: HeroNavProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    sectionId: string,
+    sectionId?: string,
   ) => {
+    if (!isHome || !sectionId) return;
     e.preventDefault();
     setMenuOpen(false);
     void scrollToSection(sectionId);
@@ -31,8 +35,10 @@ export function HeroNav({ style }: HeroNavProps) {
         <Link
           href="/"
           onClick={(e) => {
-            e.preventDefault();
-            void scrollToSection("hero");
+            if (isHome) {
+              e.preventDefault();
+              void scrollToSection("hero");
+            }
           }}
           className="relative h-12 w-28 shrink-0 md:h-14 md:w-[180px]"
         >
@@ -49,7 +55,7 @@ export function HeroNav({ style }: HeroNavProps) {
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.label}
-              href={`#${item.sectionId}`}
+              href={item.href ?? (isHome ? `#${item.sectionId}` : `/#${item.sectionId}`)}
               onClick={(e) => handleNavClick(e, item.sectionId)}
               className="whitespace-nowrap transition hover:text-brand"
             >
@@ -82,7 +88,7 @@ export function HeroNav({ style }: HeroNavProps) {
             {NAV_ITEMS.map((item) => (
               <li key={item.label}>
                 <Link
-                  href={`#${item.sectionId}`}
+                  href={item.href ?? (isHome ? `#${item.sectionId}` : `/#${item.sectionId}`)}
                   onClick={(e) => handleNavClick(e, item.sectionId)}
                   className="block py-1"
                 >

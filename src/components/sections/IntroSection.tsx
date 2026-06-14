@@ -19,7 +19,7 @@ const FIGMA = {
   headingSize: 128,
   headingLineHeight: 1.2035,
   bodySize: 32,
-  titleToRow: 175,
+  titleToRow: 21,
   bodyTopGap: 65,
 } as const;
 
@@ -44,9 +44,9 @@ export function IntroSection() {
           paddingRight: `clamp(1.5rem, ${(FIGMA.paddingRight / 1920) * 100}vw, ${FIGMA.paddingRight}px)`,
         }}
       >
-        {/* 2:36 — 우측 정렬, 상단 단독 행 */}
+        {/* 2:36 — 좌측 정렬, 이미지와 동일한 시작 위치의 단독 행 */}
         <p
-          className="w-full text-right font-semibold text-black"
+          className="font-semibold text-black"
           style={{
             fontSize: `clamp(2.25rem, ${(FIGMA.headingSize / 1920) * 100}vw, ${FIGMA.headingSize}px)`,
             lineHeight: FIGMA.headingLineHeight,
@@ -64,7 +64,7 @@ export function IntroSection() {
           }}
         >
           <div
-            className="relative mx-auto aspect-[381/414] w-full max-w-[381px] shrink-0 overflow-hidden rounded-[36px] lg:mx-0 lg:mt-[36px] lg:h-[414px] lg:w-[381px]"
+            className="relative mx-auto aspect-[381/414] w-full max-w-[381px] shrink-0 overflow-hidden rounded-[36px] lg:mx-0 lg:mt-[36px] lg:w-[clamp(280px,19.8438vw,381px)]"
           >
             <Image
               src="/images/sup img.png"

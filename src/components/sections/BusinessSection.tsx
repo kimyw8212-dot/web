@@ -15,6 +15,7 @@ export function BusinessSection() {
           sizes="100vw"
         />
       }
+      overlay={<div className="absolute inset-0 bg-black/95" />}
     >
       <div className="mx-auto w-full max-w-[1920px] px-6 py-12 md:px-12 md:py-16 lg:px-24">
         <h2 className="mb-12 text-center text-5xl font-bold text-white md:mb-16 md:text-7xl lg:text-[80px]">

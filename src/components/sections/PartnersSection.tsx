@@ -18,14 +18,14 @@ export function PartnersSection() {
     <section
       ref={sectionRef}
       id="partners"
-      className="snap-section relative z-10 flex h-[100dvh] shrink-0 flex-col justify-center bg-black py-16 text-white md:py-24"
+      className="snap-section relative z-10 flex h-[100dvh] shrink-0 flex-col bg-black text-white"
       style={{ opacity: sectionFade }}
     >
       <div
-        className="mx-auto w-full max-w-[1920px] px-6 md:px-12 lg:px-[74px]"
+        className="mx-auto flex h-full w-full max-w-[1920px] flex-col px-6 pt-10 md:px-12 md:pt-14 lg:px-[74px] lg:pt-[66px]"
         style={contentStyle}
       >
-        <header className="mx-auto mb-10 max-w-4xl text-center md:mb-14">
+        <header className="mx-auto mb-6 max-w-4xl shrink-0 text-center md:mb-10">
           <h2 className="text-5xl font-medium md:text-7xl lg:text-[80px]">PARTNERS</h2>
           <p className="mt-6 text-2xl font-semibold md:text-3xl lg:text-[40px]">
             Global Partners, Reliable Solutions
@@ -37,13 +37,13 @@ export function PartnersSection() {
           </p>
         </header>
 
-        <div className="relative mx-auto aspect-[1693/952] w-full max-w-[1693px]">
+        <div className="relative min-h-0 flex-1">
           <Image
             src="/images/partners.png"
             alt="글로벌 파트너 네트워크"
             fill
-            className="object-contain"
-            sizes="(max-width: 1920px) 100vw, 1693px"
+            className="object-contain object-bottom"
+            sizes="(max-width: 1920px) 100vw, 1726px"
           />
         </div>
       </div>

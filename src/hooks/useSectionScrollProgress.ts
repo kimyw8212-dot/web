@@ -92,3 +92,16 @@ export function getContentMotionStyle(
 ) {
   return getSectionMotionStyle(progress, maxEnterOffset, maxExitOffset);
 }
+
+/** 섹션이 화면에 자리잡은 뒤, 카드가 순서대로 아래에서 위로 올라와 쌓이는 reveal */
+export function getCardRiseStyle(visible: boolean, delayMs = 0, maxOffset = 60) {
+  const duration = visible ? 0.6 : 0.3;
+  const delay = visible ? delayMs : 0;
+
+  return {
+    opacity: visible ? 1 : 0,
+    transform: `translate3d(0, ${visible ? 0 : maxOffset}px, 0)`,
+    transition: `opacity ${duration}s ease-out ${delay}ms, transform ${duration}s ease-out ${delay}ms`,
+    willChange: "transform, opacity" as const,
+  };
+}

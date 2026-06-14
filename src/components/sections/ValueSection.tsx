@@ -16,6 +16,7 @@ export function ValueSection() {
           sizes="100vw"
         />
       }
+      overlay={<div className="absolute inset-0 bg-black/95" />}
     >
       <div className="mx-auto w-full max-w-[1920px] px-6 py-12 md:px-12 md:py-16 lg:px-[71px]">
         <header className="mx-auto mb-12 max-w-5xl text-center text-white md:mb-20 lg:mb-24">

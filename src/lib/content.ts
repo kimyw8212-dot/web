@@ -1,11 +1,11 @@
-export const NAV_ITEMS = [
-  { label: "About", sectionId: "about" },
+export const NAV_ITEMS: { label: string; sectionId?: string; href?: string }[] = [
+  { label: "About", href: "/about" },
   { label: "TECHNOLOGY", sectionId: "soc" },
   { label: "R&D", sectionId: "circuit" },
   { label: "PARTNERS", sectionId: "partners" },
   { label: "PRESS", sectionId: "press" },
   { label: "CAREER", sectionId: "career" },
-] as const;
+];
 
 /** @deprecated NAV_ITEMS 사용 */
 export const NAV_LINKS = NAV_ITEMS.map((item) => item.label);
@@ -110,6 +110,32 @@ export const VALUE_PILLARS = [
     description:
       "파운드리 및 생산 협력 네트워크를 통해 안정적인 제조 환경을 지원합니다.",
     icon: "/images/icon 4.png",
+  },
+] as const;
+
+/** Figma 05_1~05_4 (About, PULSE OF INNOVATION) */
+export const PULSE_SECTION_CONTENT = {
+  title: "PULSE OF INNOVATION",
+  description: ["Precision engineering powered", "by continuous innovation."],
+  image: "/images/PULSE OF INNOVATION img.png",
+} as const;
+
+export const PULSE_CARDS = [
+  {
+    title: "PRECISION",
+    description: ["Advanced Semiconductor", "Engineering"],
+  },
+  {
+    title: "INNOVATION",
+    description: ["Future-Oriented", "Technology"],
+  },
+  {
+    title: "CONNECTIVITY",
+    description: ["Global Industry", "Partnership"],
+  },
+  {
+    title: "MOBILITY",
+    description: ["Smart Mobility", "Solution"],
   },
 ] as const;
 

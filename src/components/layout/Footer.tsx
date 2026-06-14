@@ -6,9 +6,9 @@ export function Footer() {
   return (
     <footer
       id="career"
-      className="relative z-10 shrink-0 snap-section bg-black text-white"
+      className="relative z-10 shrink-0 snap-section h-auto! bg-black text-white"
     >
-      <div className="mx-auto flex max-w-[1920px] flex-col gap-12 px-6 py-16 md:flex-row md:items-start md:justify-between md:gap-20 md:px-12 md:py-24 lg:px-[167px]">
+      <div className="mx-auto flex max-w-[1920px] flex-col gap-10 px-6 py-10 md:flex-row md:items-start md:justify-between md:gap-16 md:px-12 md:py-16 lg:px-[167px]">
         <div className="relative h-32 w-64 shrink-0 md:h-[221px] md:w-[464px]">
           <Image
             src="/images/logo-footer.png"
@@ -18,7 +18,7 @@ export function Footer() {
           />
         </div>
 
-        <div className="flex max-w-3xl flex-col gap-12 md:gap-[137px]">
+        <div className="flex max-w-3xl flex-col gap-12 md:gap-16">
           <nav className="flex flex-wrap gap-4 text-xl font-light md:gap-6 md:text-[32px]">
             {FOOTER_LINKS.map((label) => (
               <Link key={label} href="#" className="hover:text-brand">
