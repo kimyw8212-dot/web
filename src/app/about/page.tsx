@@ -14,7 +14,7 @@ export default function AboutPage() {
         <AboutIntroSection />
         <TechShowcaseSection
           id="connectivity"
-          step="01/03"
+          step="01/04"
           title="CONNECTIVITY"
           description={["Precision", "Advanced Semiconductor Engineering"]}
           model="/models/connectivity.glb"
@@ -24,7 +24,7 @@ export default function AboutPage() {
         />
         <TechShowcaseSection
           id="intelligence"
-          step="02/03"
+          step="02/04"
           title="INTELLIGENCE"
           description={["Precision", "Advanced Semiconductor Engineering"]}
           model="/models/intelligence.glb"
